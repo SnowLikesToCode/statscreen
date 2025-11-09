@@ -1,0 +1,8 @@
+{
+  "itemGroup.statscreen": "Example Mod Tab",
+  "block.statscreen.example_block": "Example Block",
+  "item.statscreen.example_item": "Example Item",
+  "statscreen.stats": "Stats",
+  "statscreen.stats_menu": "Stats Menu",
+  "statscreen.hp": "HP"
+}

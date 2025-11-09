@@ -1,0 +1,101 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Client",
+      "presentation": {
+        "group": "Mod Development - statscreen",
+        "order": 0
+      },
+      "projectName": "statscreen",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/build/moddev/clientRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/build/moddev/clientRunVmArgs.txt",
+        "-Dfml.modFolders\u003dstatscreen%%/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/bin/main"
+      ],
+      "cwd": "${workspaceFolder}/run",
+      "env": {
+        "MOD_CLASSES": "statscreen%%/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/bin/main"
+      },
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Data",
+      "presentation": {
+        "group": "Mod Development - statscreen",
+        "order": 1
+      },
+      "projectName": "statscreen",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/build/moddev/dataRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/build/moddev/dataRunVmArgs.txt",
+        "-Dfml.modFolders\u003dstatscreen%%/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/bin/main"
+      ],
+      "cwd": "${workspaceFolder}/run",
+      "env": {
+        "MOD_CLASSES": "statscreen%%/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/bin/main"
+      },
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "GameTestServer",
+      "presentation": {
+        "group": "Mod Development - statscreen",
+        "order": 2
+      },
+      "projectName": "statscreen",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/build/moddev/gameTestServerRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/build/moddev/gameTestServerRunVmArgs.txt",
+        "-Dfml.modFolders\u003dstatscreen%%/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/bin/main"
+      ],
+      "cwd": "${workspaceFolder}/run",
+      "env": {
+        "MOD_CLASSES": "statscreen%%/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/bin/main"
+      },
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Server",
+      "presentation": {
+        "group": "Mod Development - statscreen",
+        "order": 3
+      },
+      "projectName": "statscreen",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/build/moddev/serverRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/build/moddev/serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dstatscreen%%/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/bin/main"
+      ],
+      "cwd": "${workspaceFolder}/run",
+      "env": {
+        "MOD_CLASSES": "statscreen%%/home/snow/Documents/Coding Projects/Minecraft Mods/NeoForge/statscreen/bin/main"
+      },
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    }
+  ]
+}
