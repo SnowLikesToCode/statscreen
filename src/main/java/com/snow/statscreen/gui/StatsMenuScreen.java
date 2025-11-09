@@ -14,10 +14,10 @@ import net.neoforged.neoforge.network.PacketDistributor;
 
 public class StatsMenuScreen extends Screen {
     private final Screen parent;
-    private static final ResourceLocation STATS_BG = new ResourceLocation(StatScreen.MODID, "textures/gui/stats_menu.png");
     private static final ResourceLocation HEART_ICON = new ResourceLocation(StatScreen.MODID, "textures/gui/icons/heart.png");
-    private static final int BG_W = 176;
-    private static final int BG_H = 166;
+    private static final int ICON_SIZE = 9;
+    private static final int TEXT_SPACING = 4;
+    private static final int BUTTON_SPACING = 6;
 
     public StatsMenuScreen(Screen parent) {
         super(Component.translatable("statscreen.stats_menu"));
@@ -28,44 +28,39 @@ public class StatsMenuScreen extends Screen {
     protected void init() {
         super.init();
         
-        int centerX = this.width / 2;
-        int top = (this.height - BG_H) / 2;
-        int startY = top + 20;
+        int startY = this.height / 4 + 20;
         int buttonWidth = 40;
         int buttonHeight = 20;
-        int spacing = 10;
-        int rowY = startY;
-        int buttonRowY = rowY - 5; // align buttons with text row
-        int left = (this.width - BG_W) / 2;
-        int startX = left + 12; // left margin inside panel
+        int buttonSpacing = 10;
         
-        // Compute dynamic width of the HP amount text to place buttons after it
+        // Calculate button positions based on text widths
         Player player = Minecraft.getInstance().player;
         String hpAmountText = player != null ? String.format("%.1f / %.1f", player.getHealth(), player.getMaxHealth()) : "0.0 / 0.0";
-        int hpLabelWidth = this.font.width(Component.translatable("statscreen.hp"));
+        Component hpLabel = Component.translatable("statscreen.hp");
+        int hpLabelWidth = this.font.width(hpLabel);
         int hpValueWidth = this.font.width(hpAmountText);
-        int iconWidth = 9;
-        int gapSmall = 4;
-        int gap = 6;
-        int hpLabelX = startX + iconWidth + gapSmall;
-        int hpValueX = hpLabelX + hpLabelWidth + gap;
-        int minusX = hpValueX + hpValueWidth + gap;
-        int plusX = minusX + buttonWidth + spacing;
+        
+        // Position: [icon] [HP label] [HP value] [-] [+]
+        int startX = this.width / 2 - 100; // Left edge of health row
+        int hpLabelX = startX + ICON_SIZE + TEXT_SPACING;
+        int hpValueX = hpLabelX + hpLabelWidth + BUTTON_SPACING;
+        int minusX = hpValueX + hpValueWidth + BUTTON_SPACING;
+        int plusX = minusX + buttonWidth + buttonSpacing;
         
         // Health stat controls
-        this.addRenderableWidget(createHealthButton("-", minusX, buttonRowY, buttonWidth, buttonHeight, false));
-        this.addRenderableWidget(createHealthButton("+", plusX, buttonRowY, buttonWidth, buttonHeight, true));
+        this.addRenderableWidget(createHealthButton("-", minusX, startY - 2, buttonWidth, buttonHeight, false));
+        this.addRenderableWidget(createHealthButton("+", plusX, startY - 2, buttonWidth, buttonHeight, true));
         
         // Future: Add more stat controls here
-        // Example: int speedButtonY = startY + 60;
-        // this.addRenderableWidget(createSpeedButton("-", centerX - buttonWidth - spacing / 2, speedButtonY, buttonWidth, buttonHeight, false));
-        // this.addRenderableWidget(createSpeedButton("+", centerX + spacing / 2, speedButtonY, buttonWidth, buttonHeight, true));
+        // Example: int speedY = startY + 40;
+        // this.addRenderableWidget(createSpeedButton("-", minusX, speedY - 2, buttonWidth, buttonHeight, false));
+        // this.addRenderableWidget(createSpeedButton("+", plusX, speedY - 2, buttonWidth, buttonHeight, true));
         
         // Back button
         this.addRenderableWidget(Button.builder(
             Component.translatable("gui.back"),
             button -> this.minecraft.setScreen(this.parent)
-        ).bounds(this.width / 2 - 100, top + BG_H - 24, 200, 20).build());
+        ).bounds(this.width / 2 - 100, this.height / 4 + 120, 200, 20).build());
     }
     
     private Button createHealthButton(String label, int x, int y, int width, int height, boolean increase) {
@@ -89,40 +84,34 @@ public class StatsMenuScreen extends Screen {
 
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-        // 1) Draw vanilla dim overlay
         this.renderBackground(guiGraphics, mouseX, mouseY, partialTick);
-        int left = (this.width - BG_W) / 2;
-        int top = (this.height - BG_H) / 2;
-        
-        // 3) Draw widgets/overlays (buttons, etc.) above the background
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         
-        // 4) Finally, draw all our foreground text/icons above everything else
-        guiGraphics.drawCenteredString(this.font, this.title, this.width / 2, top + 6, 16777215);
+        guiGraphics.drawCenteredString(this.font, this.title, this.width / 2, 20, 16777215);
         
         Player player = Minecraft.getInstance().player;
         if (player != null) {
-            int startY = top + 20;
+            int startY = this.height / 4 + 20;
+            int startX = this.width / 2 - 100;
             
-            // Render Health stat
-            int startX = left + 12;
-            int iconX = startX;
-            int iconY = startY - 1;
-            guiGraphics.blit(HEART_ICON, iconX, iconY, 0, 0, 9, 9, 9, 9);
+            // Render Health stat: [icon] [HP label] [HP value]
             Component hpLabel = Component.translatable("statscreen.hp");
             String hpAmountText = String.format("%.1f / %.1f", player.getHealth(), player.getMaxHealth());
-            int hpLabelX = startX + 9 + 4;
-            int hpValueX = hpLabelX + this.font.width(hpLabel) + 6;
+            int iconX = startX;
+            int hpLabelX = startX + ICON_SIZE + TEXT_SPACING;
+            int hpValueX = hpLabelX + this.font.width(hpLabel) + BUTTON_SPACING;
+            
+            guiGraphics.blit(HEART_ICON, iconX, startY - 1, 0, 0, ICON_SIZE, ICON_SIZE, ICON_SIZE, ICON_SIZE);
             guiGraphics.drawString(this.font, hpLabel, hpLabelX, startY, 16777215, false);
             guiGraphics.drawString(this.font, hpAmountText, hpValueX, startY, 16777215, false);
             
             // Future: Add more stat displays here
             // Example: Render Speed stat
-            // int speedY = startY + 50;
+            // int speedY = startY + 40;
             // Component speedLabel = Component.translatable("statscreen.speed");
             // Component speedValue = Component.literal(String.format("%.1f", player.getAttributeValue(Attributes.MOVEMENT_SPEED)));
-            // guiGraphics.drawCenteredString(this.font, speedLabel, centerX, speedY, 16777215);
-            // guiGraphics.drawCenteredString(this.font, speedValue, centerX, speedY + 12, 16777215);
+            // guiGraphics.drawString(this.font, speedLabel, hpLabelX, speedY, 16777215, false);
+            // guiGraphics.drawString(this.font, speedValue, hpValueX, speedY, 16777215, false);
         }
     }
 }
