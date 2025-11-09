@@ -34,11 +34,27 @@ public class StatsMenuScreen extends Screen {
         int buttonWidth = 40;
         int buttonHeight = 20;
         int spacing = 10;
+        int rowY = startY;
+        int buttonRowY = rowY - 5; // align buttons with text row
+        int left = (this.width - BG_W) / 2;
+        int startX = left + 12; // left margin inside panel
+        
+        // Compute dynamic width of the HP amount text to place buttons after it
+        Player player = Minecraft.getInstance().player;
+        String hpAmountText = player != null ? String.format("%.1f / %.1f", player.getHealth(), player.getMaxHealth()) : "0.0 / 0.0";
+        int hpLabelWidth = this.font.width(Component.translatable("statscreen.hp"));
+        int hpValueWidth = this.font.width(hpAmountText);
+        int iconWidth = 9;
+        int gapSmall = 4;
+        int gap = 6;
+        int hpLabelX = startX + iconWidth + gapSmall;
+        int hpValueX = hpLabelX + hpLabelWidth + gap;
+        int minusX = hpValueX + hpValueWidth + gap;
+        int plusX = minusX + buttonWidth + spacing;
         
         // Health stat controls
-        int healthButtonY = startY + 25;
-        this.addRenderableWidget(createHealthButton("-", centerX - buttonWidth - spacing / 2, healthButtonY, buttonWidth, buttonHeight, false));
-        this.addRenderableWidget(createHealthButton("+", centerX + spacing / 2, healthButtonY, buttonWidth, buttonHeight, true));
+        this.addRenderableWidget(createHealthButton("-", minusX, buttonRowY, buttonWidth, buttonHeight, false));
+        this.addRenderableWidget(createHealthButton("+", plusX, buttonRowY, buttonWidth, buttonHeight, true));
         
         // Future: Add more stat controls here
         // Example: int speedButtonY = startY + 60;
@@ -73,25 +89,32 @@ public class StatsMenuScreen extends Screen {
 
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+        // 1) Draw vanilla dim overlay
         this.renderBackground(guiGraphics, mouseX, mouseY, partialTick);
         int left = (this.width - BG_W) / 2;
         int top = (this.height - BG_H) / 2;
-        guiGraphics.blit(STATS_BG, left, top, 0, 0, BG_W, BG_H);
+        
+        // 3) Draw widgets/overlays (buttons, etc.) above the background
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
+        
+        // 4) Finally, draw all our foreground text/icons above everything else
         guiGraphics.drawCenteredString(this.font, this.title, this.width / 2, top + 6, 16777215);
         
         Player player = Minecraft.getInstance().player;
         if (player != null) {
-            int centerX = this.width / 2;
             int startY = top + 20;
             
             // Render Health stat
-            int iconX = centerX - 60;
+            int startX = left + 12;
+            int iconX = startX;
             int iconY = startY - 1;
             guiGraphics.blit(HEART_ICON, iconX, iconY, 0, 0, 9, 9, 9, 9);
             Component hpLabel = Component.translatable("statscreen.hp");
-            Component hpValue = Component.literal(String.format("%.1f / %.1f", player.getHealth(), player.getMaxHealth()));
-            guiGraphics.drawCenteredString(this.font, hpLabel, centerX, startY, 16777215);
-            guiGraphics.drawCenteredString(this.font, hpValue, centerX, startY + 12, 16777215);
+            String hpAmountText = String.format("%.1f / %.1f", player.getHealth(), player.getMaxHealth());
+            int hpLabelX = startX + 9 + 4;
+            int hpValueX = hpLabelX + this.font.width(hpLabel) + 6;
+            guiGraphics.drawString(this.font, hpLabel, hpLabelX, startY, 16777215, false);
+            guiGraphics.drawString(this.font, hpAmountText, hpValueX, startY, 16777215, false);
             
             // Future: Add more stat displays here
             // Example: Render Speed stat
@@ -101,8 +124,6 @@ public class StatsMenuScreen extends Screen {
             // guiGraphics.drawCenteredString(this.font, speedLabel, centerX, speedY, 16777215);
             // guiGraphics.drawCenteredString(this.font, speedValue, centerX, speedY + 12, 16777215);
         }
-        
-        super.render(guiGraphics, mouseX, mouseY, partialTick);
     }
 }
 
