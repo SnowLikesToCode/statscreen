@@ -39,7 +39,7 @@ Increased Strength and Dexterity, Slight Ranged Buff. All Other Stats (Health, R
 | Name        | Min | Max |
 |-------------|-----|-----|
 | Health      | 7   | 14  |
-| Strength    | 13  | 6   |
+| Strength    | 6   | 13  |
 | Resistance  | 10  | 12  |
 | Dexterity   | 15  | 25  |
 | Magic       | 2   | 8   |
