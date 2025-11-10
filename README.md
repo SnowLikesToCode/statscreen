@@ -8,74 +8,86 @@ Is supposed to enhance Minecraft in a way where you can experience different Pla
 ### Knight
 Increased Damage, Resistance and Access to lots of new Weapons. Slight Health Increase and Slight Dexterity Increase
 #### Start Stats - 47 Points
-Health: min 12 - 18 max
-Strength: min 12 - 20 max
-Resistance: min 10 - 15 max
-Dexterity: min 10 - 15 max
-Magic:  min 0 - 5 max
-Ranged:  min 6 - 10 max
-Hunger: min 10 - 15 max
-Adaptabilty: min 11 - 18 max
+| Name        | Min | Max |
+|-------------|-----|-----|
+| Health      | 12  | 18  |
+| Strength    | 12  | 20  |
+| Resistance  | 10  | 15  |
+| Dexterity   | 10  | 15  |
+| Magic       | 0   | 5   |
+| Ranged      | 6   | 10  |
+| Hunger      | 10  | 15  |
+| Adaptabilty | 11  | 18  |
 
 ### Mage
 Slightly decreased Health, Strength, Dexterity and Resistance, Magic Level 10 (Can use Magic Instantly)
 #### Start Stats - 44 Points
-Health: min 7 - 14 max
-Strength: min 4 - 8 max
-Resistance: min 7 - 12 max
-Dexterity: min 10 - 15 max
-Magic:  min 10 - 20 max
-Ranged:  min 4 - 8 max
-Hunger: min 10 - 15 max
-Adaptabilty: min 8 - 12 max
+| Name        | Min | Max |
+|-------------|-----|-----|
+| Health      | 7   | 14  |
+| Strength    | 4   | 8   |
+| Resistance  | 7   | 12  |
+| Dexterity   | 10  | 15  |
+| Magic       | 10  | 20  |
+| Ranged      | 4   | 8   |
+| Hunger      | 10  | 15  |
+| Adaptabilty | 8   | 12  |
 
 ### Assasin
 Increased Strength and Dexterity, Slight Ranged Buff. All Other Stats (Health, Resistance and Magic) decreased.
 #### Start Stats - 41 Points
-Health: min 7 - 14 max
-Strength: min 13 - 16 max
-Resistance: min 10 - 12 max
-Dexterity: min 15 - 25 max
-Magic:  min 2 - 8 max
-Ranged:  min 8 - 12 max
-Hunger: min 10 - 15 max
-Adaptabilty: min 12 - 16 max
+| Name        | Min | Max |
+|-------------|-----|-----|
+| Health      | 7   | 14  |
+| Strength    | 13  | 6   |
+| Resistance  | 10  | 12  |
+| Dexterity   | 15  | 25  |
+| Magic       | 2   | 8   |
+| Ranged      | 8   | 12  |
+| Hunger      | 10  | 15  |
+| Adaptabilty | 12  | 16  |
 
 ### Archer
 Ranged and Dexterity buff, rest of the Stats decreased slightly no Magic
 #### Start Stats - 48 Points
-Health: min 7 - 14 max
-Strength: min 5 - 10 max
-Resistance: min 6 - 10 max
-Dexterity: min 10 - 20 max
-Magic:  min 2 - 8 max
-Ranged:  min 12 - 18 max
-Hunger: min 10 - 15 max
-Adaptabilty: min 10 - 15 max
+| Name        | Min | Max |
+|-------------|-----|-----|
+| Health      | 7   | 14  |
+| Strength    | 5   | 10  |
+| Resistance  | 6   | 10  |
+| Dexterity   | 10  | 20  |
+| Magic       | 2   | 8   |
+| Ranged      | 12  | 18  |
+| Hunger      | 10  | 15  |
+| Adaptabilty | 10  | 15  |
 
 ### Tank
 Heavily Increased Health, Resistance and Strength, Dexterity decreased and rest of the stats aswell, looses Hunger quicker.
 #### Start Stats - 44 Points
-Health: min 14 - 22 max
-Strength: min 14 - 22 max
-Resistance: min 12 - 20 max
-Dexterity: min 5 - 10 max
-Magic:  min 0 max
-Ranged:  min 3 - 8 max
-Hunger: min 5 - 10 max
-Adaptabilty: min 15 - 20 max
+| Name        | Min | Max |
+|-------------|-----|-----|
+| Health      | 14  | 22  |
+| Strength    | 14  | 22  |
+| Resistance  | 12  | 20  |
+| Dexterity   | 5   | 10  |
+| Magic       | 0   | 0   |
+| Ranged      | 3   | 8   |
+| Hunger      | 5   | 10  |
+| Adaptabilty | 15  | 20  |
 
 ### Larry
 Starts with HEAVILY decreased Stats in ALL ranges. (Might still be worth it :P)
 #### Start Stats - 103 Points
-Health: min 2 - 16 max
-Strength: min 2 - 16 max
-Resistance: min 2 - 16 max
-Dexterity: min 6 - 20 max
-Magic:  min 0 - 10 max
-Ranged:  min 2 - 12 max
-Hunger: min 2 - 15 max
-Adaptabilty: min 2 - 16 max
+| Name        | Min | Max |
+|-------------|-----|-----|
+| Health      | 2   | 16  |
+| Strength    | 2   | 16  |
+| Resistance  | 2   | 16  |
+| Dexterity   | 6   | 20  |
+| Magic       | 0   | 10  |
+| Ranged      | 2   | 12  |
+| Hunger      | 2   | 15  |
+| Adaptabilty | 2   | 16  |
 
 ### Joker
 Randomized Stats, could start with the worst or best character
