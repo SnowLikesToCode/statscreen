@@ -1,6 +1,6 @@
 package com.snow.statscreen.events;
 
-import com.snow.statscreen.PlayerAttributes.PlayerAttributes;
+import com.snow.statscreen.PlayerAttributes.HealthAttribute;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -30,8 +30,8 @@ public class PlayerEvents {
         Integer ticksLeft = loginDelay.get(player.getUUID());
         if (ticksLeft != null) {
             if (ticksLeft <= 1) {
-                PlayerAttributes.loadAndApplyHealthBonus(player);
-                PlayerAttributes.syncHealthBonusToNBT(player);
+                HealthAttribute.loadAndApplyHealthBonus(player);
+                HealthAttribute.syncHealthBonusToNBT(player);
                 loginDelay.remove(player.getUUID());
             } else {
                 loginDelay.put(player.getUUID(), ticksLeft - 1);
@@ -39,11 +39,11 @@ public class PlayerEvents {
         }
         
         // Handle regeneration fix
-        PlayerAttributes.ensureHealthRegeneration(player);
+        HealthAttribute.ensureHealthRegeneration(player);
         
         // Periodic sync to NBT (every 5 seconds)
         if (player.tickCount % 100 == 0) {
-            PlayerAttributes.syncHealthBonusToNBT(player);
+            HealthAttribute.syncHealthBonusToNBT(player);
         }
     }
 }

@@ -1,7 +1,7 @@
 package com.snow.statscreen.network;
 
 import com.snow.statscreen.StatScreen;
-import com.snow.statscreen.PlayerAttributes.PlayerAttributes;
+import com.snow.statscreen.PlayerAttributes.HealthAttribute;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
@@ -29,9 +29,9 @@ public record ChangeMaxHealthPacket(boolean increase) implements CustomPacketPay
         context.workHandler().submitAsync(() -> {
             if (context.player().orElse(null) instanceof ServerPlayer serverPlayer) {
                 if (packet.increase) {
-                    PlayerAttributes.increaseMaxHealth(serverPlayer);
+                    HealthAttribute.increaseMaxHealth(serverPlayer);
                 } else {
-                    PlayerAttributes.decreaseMaxHealth(serverPlayer);
+                    HealthAttribute.decreaseMaxHealth(serverPlayer);
                 }
             }
         });

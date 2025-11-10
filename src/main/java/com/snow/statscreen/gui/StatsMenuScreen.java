@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import com.snow.statscreen.StatScreen;
 import com.snow.statscreen.network.ChangeMaxHealthPacket;
-import com.snow.statscreen.PlayerAttributes.PlayerAttributes;
+import com.snow.statscreen.PlayerAttributes.HealthAttribute;
 import net.neoforged.neoforge.network.PacketDistributor;
 
 public class StatsMenuScreen extends Screen {
@@ -71,9 +71,9 @@ public class StatsMenuScreen extends Screen {
                 if (player != null) {
                     // Optimistic update for instant GUI feedback
                     if (increase) {
-                        PlayerAttributes.increaseMaxHealth(player);
+                        HealthAttribute.increaseMaxHealth(player);
                     } else {
-                        PlayerAttributes.decreaseMaxHealth(player);
+                        HealthAttribute.decreaseMaxHealth(player);
                     }
                 }
                 // Send to server (authoritative)
