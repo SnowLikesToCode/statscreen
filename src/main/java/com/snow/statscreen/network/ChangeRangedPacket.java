@@ -1,17 +1,17 @@
 package com.snow.statscreen.network;
 
 import com.snow.statscreen.StatScreen;
-import com.snow.statscreen.PlayerAttributes.HealthAttribute;
+import com.snow.statscreen.PlayerAttributes.RangedAttribute;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.neoforge.network.handling.PlayPayloadContext;
 
-public record ChangeMaxHealthPacket(boolean increase) implements CustomPacketPayload {
-    public static final ResourceLocation ID = new ResourceLocation(StatScreen.MODID, "change_max_health");
+public record ChangeRangedPacket(boolean increase) implements CustomPacketPayload {
+    public static final ResourceLocation ID = new ResourceLocation(StatScreen.MODID, "change_ranged");
 
-    public ChangeMaxHealthPacket(FriendlyByteBuf buffer) {
+    public ChangeRangedPacket(FriendlyByteBuf buffer) {
         this(buffer.readBoolean());
     }
 
@@ -25,13 +25,13 @@ public record ChangeMaxHealthPacket(boolean increase) implements CustomPacketPay
         return ID;
     }
 
-    public static void handle(ChangeMaxHealthPacket packet, PlayPayloadContext context) {
+    public static void handle(ChangeRangedPacket packet, PlayPayloadContext context) {
         context.workHandler().submitAsync(() -> {
             if (context.player().orElse(null) instanceof ServerPlayer serverPlayer) {
                 if (packet.increase) {
-                    HealthAttribute.increaseMaxHealth(serverPlayer);
+                    RangedAttribute.increaseRanged(serverPlayer);
                 } else {
-                    HealthAttribute.decreaseMaxHealth(serverPlayer);
+                    RangedAttribute.decreaseRanged(serverPlayer);
                 }
             }
         });

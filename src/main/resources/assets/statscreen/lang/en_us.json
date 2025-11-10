@@ -4,5 +4,10 @@
   "item.statscreen.example_item": "Example Item",
   "statscreen.stats": "Stats",
   "statscreen.stats_menu": "Stats Menu",
-  "statscreen.hp": "HP"
+  "statscreen.hp": "HP",
+  "statscreen.strength": "Strength",
+  "statscreen.resistance": "Resistance",
+  "statscreen.dexterity": "Dexterity",
+  "statscreen.ranged": "Ranged",
+  "statscreen.hunger": "Hunger"
 }

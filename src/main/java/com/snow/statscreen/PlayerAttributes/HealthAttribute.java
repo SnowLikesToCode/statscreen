@@ -5,7 +5,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 
-public class PlayerAttributes {
+public class HealthAttribute {
     private static final String NBT_KEY = "statscreen.max_health_bonus";
     private static final double BASE_MAX_HEALTH = 20.0;
     private static final double HEALTH_CHANGE_AMOUNT = 2.0;
@@ -90,3 +90,4 @@ public class PlayerAttributes {
         }
     }
 }
+

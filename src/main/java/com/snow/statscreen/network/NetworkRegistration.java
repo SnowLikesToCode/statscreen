@@ -14,6 +14,16 @@ public class NetworkRegistration {
         final IPayloadRegistrar registrar = event.registrar(StatScreen.MODID);
         registrar.play(ChangeMaxHealthPacket.ID, ChangeMaxHealthPacket::new, handler -> handler
             .server(ChangeMaxHealthPacket::handle));
+        registrar.play(ChangeStrengthPacket.ID, ChangeStrengthPacket::new, handler -> handler
+            .server(ChangeStrengthPacket::handle));
+        registrar.play(ChangeResistancePacket.ID, ChangeResistancePacket::new, handler -> handler
+            .server(ChangeResistancePacket::handle));
+        registrar.play(ChangeDexterityPacket.ID, ChangeDexterityPacket::new, handler -> handler
+            .server(ChangeDexterityPacket::handle));
+        registrar.play(ChangeRangedPacket.ID, ChangeRangedPacket::new, handler -> handler
+            .server(ChangeRangedPacket::handle));
+        registrar.play(ChangeHungerPacket.ID, ChangeHungerPacket::new, handler -> handler
+            .server(ChangeHungerPacket::handle));
     }
 }
 
