@@ -13,7 +13,7 @@ Increased Damage, Resistance and Access to lots of new Weapons. Slight Health In
 | Health      | 12  | 18  |
 | Strength    | 12  | 20  |
 | Resistance  | 10  | 15  |
-| Dexterity   | 10  | 15  |
+| Dexterity   | 10  | 13  |
 | Magic       | 0   | 5   |
 | Ranged      | 6   | 10  |
 | Hunger      | 10  | 15  |
