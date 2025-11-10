@@ -141,6 +141,6 @@ Affects Loot from Chests and other things in the future
 Artifacts will usually Drop when fighting Bosses or in Serverwide Quests. 
 They are Rare and Expensive!
 ## Artifact Example
-The Head of King Cruel the Swine Pig.
-A Head of a Piglin boss which dropped after a large fight. Only one Knight had the oppurtunity to pick it up and now has +2 stat Points in Damage.
-Multiple Other Knights are trying to buy it off him with offers in the double digit Netherite Range.
+- The Head of King Cruel the Swine Pig.
+- A Head of a Piglin boss which dropped after a large fight. Only one Knight had the oppurtunity to pick it up and now has +2 stat Points in Damage.
+- Multiple Other Knights are trying to buy it off him with offers in the double digit Netherite Range.
