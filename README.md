@@ -17,16 +17,16 @@ Being restricted in both, Armor and Stats will also increase the amount of time 
 The Quests and Challenges in this Mod are based on your level, they usually change in difficulty every 10 Levels but this will decrease in higher Level-Ranges.
 
 #### Quest Examples Level 0-10
-Farm 100 wheat
-Kill 20 Zombies
-Farm 100 Wood-Logs.
-Survive 10 In-game days Without Dying
+- Farm 100 wheat
+- Kill 20 Zombies
+- Farm 100 Wood-Logs.
+- Survive 10 In-game days Without Dying
 
 ### Quest Examples Level 95-100
-Kill the enderdragon while having no Armor, or Food.
-Kill 4 Wardens with a Sword in 5 Minutes.
-Fight certain Endboss.
-Figure out the Meaning of life.
+- Kill the enderdragon while having no Armor, or Food.
+- Kill 4 Wardens with a Sword in 5 Minutes.
+- Fight certain Endboss.
+- Figure out the Meaning of life.
 
 # Descriptions
 ## Roles
