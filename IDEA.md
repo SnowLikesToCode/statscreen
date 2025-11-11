@@ -9,6 +9,7 @@
 - Ranks for Role System : Prestige Knight, Advanced Mage etc.
 - Skill Trees
 - temporary debuffs world-wide zbsp “Heat Wave: hunger drains 2× faster”
+- Global Goals: rebuild towns, open portals, unlock new dimensions after milestones.
 # Quest System Refinement
 - Daily/Weekly quests
 - Tiered Quests Common → Rare → Epic → Legendary difficulty.
