@@ -17,3 +17,6 @@ Tiered Quests Common → Rare → Epic → Legendary difficulty.
 - Add a way to stop Griefing & Stealing in a fun way.
 - NPC Mod
 - Party and Base System
+## Guilds / Factions
+- Player Guilds: unlock shared storage, insignias, and guild quests.
+- Guild Rankings: based on collective XP or quest points.
