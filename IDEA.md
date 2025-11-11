@@ -11,8 +11,9 @@
 - temporary debuffs world-wide zbsp “Heat Wave: hunger drains 2× faster”
 # Quest System Refinement
 - Daily/Weekly quests
-Tiered Quests Common → Rare → Epic → Legendary difficulty.
+- Tiered Quests Common → Rare → Epic → Legendary difficulty.
 - Party Quests
+- Hidden Structure with quest (maybe NPC)
 # Other Mod ideas which fit together
 - Add War System
 - Add a way to stop Griefing & Stealing in a fun way.
