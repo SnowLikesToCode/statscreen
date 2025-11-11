@@ -8,6 +8,7 @@
 - Cursed Artifacts: Provide strong buffs but heavy penalties (e.g., “+10 Strength, -10 Resistance”).
 - Ranks for Role System : Prestige Knight, Advanced Mage etc.
 - Skill Trees
+- temporary debuffs world-wide zbsp “Heat Wave: hunger drains 2× faster”
 # Quest System Refinement
 - Daily/Weekly quests
 Tiered Quests Common → Rare → Epic → Legendary difficulty.
