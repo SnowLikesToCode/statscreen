@@ -23,3 +23,5 @@
 ## Guilds / Factions
 - Player Guilds: unlock shared storage, insignias, and guild quests.
 - Guild Rankings: based on collective XP or quest points.
+#
+- Horror Dimension when going to sleep
